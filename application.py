@@ -5,14 +5,6 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 application =Flask(__name__)
-try:
-    with open("model_svc.pkl", "rb") as f:
-        model = pickle.load(f)
-    with open("scaler2.pkl", "rb") as f:
-        scaler = pickle.load(f)
-    print("Both model and scaler loaded successfully!")
-except Exception as e:
-    print("Error loading files:", e)
 app = application
 scaler1 = joblib.load("scaler2.pkl")
 model = pickle.load(open("model_2.pkl","rb"))
